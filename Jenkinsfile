@@ -8,6 +8,13 @@ pipeline {
       }
     }
 
+    stage('Clean') {
+      steps {
+        sh 'mvn clean'
+        echo 'Code clean'
+      }
+    }
+    
     stage('Compile') {
       steps {
         sh 'mvn compile'
